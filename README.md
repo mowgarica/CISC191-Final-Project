@@ -1,2 +1,2 @@
-# CISC191-Final-Project
-A story based mini game where the protagonist gets transported to an alternate world and has to solve riddles in order to return home. 
+# CISC191-Gachapong
+Test your luck! Click the draw button and the gacha machine will grant you your lucky card for the day. If you are able to pull three of the same kind, you have extremely amazing luck, if you only pull two of the same, and one different, your luck is decent. In the case that all three cards are different, your luck is quite poor. However, while pulling be careful for the evil cats! They are a double edged sword since when pulled, you will have to answer a riddle. Get the riddle wrong and the evil cat takes one of your cards, get it right and you are granted a matching card! Best of luck to all players. 
