@@ -32,15 +32,23 @@ public class CatFactory
 	
 	public static Cat getRandomCat()
 	{
+		// 1. generate a cat type number
+		int catTypeNumber = rngCatTypes.nextInt(3);
+		
+		// determine whether the cat will be good or evil
 		switch(rngCatMorality.nextInt(2))
 		{
-			case 0: 
+			case 0:
 				GoodCat goodCat = new GoodCat();
+				//GoodCat.Types goodCatType = determineGoodCatType(catTypeNumber);
 				return goodCat;
 				
 			case 1:
-				EvilCat evilCat = new EvilCat();
-				return evilCat;
+				// 2. get the actual cat type from the number
+				EvilCat.Types evilCatType = determineEvilCatType(catTypeNumber);
+				
+				// 3. call from evil cat type with the type
+				return fromEvilCatType(evilCatType);
 				
 				default:
 					return null;
@@ -75,14 +83,11 @@ public class CatFactory
 		switch(evilCatType)
 		{
 			case IRIS_CAT:
-				return new EvilCat("Iris", 
-						"Watch me sleep all worries away! In sleep I'll dream good luck your way.");
+				return new EvilCat("Iris");
 			case ANGRY_CAT:
-				return new EvilCat("Angry Cat", 
-						"This charming cat wishes you good luck!"); 
+				return new EvilCat("Angry Cat"); 
 			case HUNGRY_CAT:
-				return new EvilCat("Hungry Cat", 
-						"I've got your back... from over here..."); 				
+				return new EvilCat("Hungry Cat"); 				
 				
 				default:
 					return null;

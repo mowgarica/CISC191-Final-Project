@@ -42,10 +42,10 @@ private String evilCatMessage;
 		evilCatMessage = "This evil cat says, \"You must solve this riddle to continue!\""; 
 	}
 	
-	public EvilCat(String name, String newMessage)
+	public EvilCat(String name)
 	{
 		super(name);
-		evilCatMessage = newMessage;
+		evilCatMessage = "This evil cat says, \"You must solve this riddle to continue!\"";
 	}
 
 }
