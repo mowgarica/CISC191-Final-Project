@@ -30,11 +30,12 @@ public class GoodCat extends Cat
 	
 	private String goodLuckMessage;
 	
-	enum Types 
+	enum GoodTypes 
 	{
 		SLEEPY_CAT,
 		PRETTY_CAT,
 		SHY_CAT,
+
 	}
 	
 	public GoodCat()

@@ -27,9 +27,9 @@ package models;
  */
 public class EvilCat extends Cat
 {
-private String evilCatMessage;
+	private String evilCatMessage;
 	
-	enum Types 
+	enum EvilTypes 
 	{
 		IRIS_CAT,
 		ANGRY_CAT,
@@ -48,4 +48,8 @@ private String evilCatMessage;
 		evilCatMessage = "This evil cat says, \"You must solve this riddle to continue!\"";
 	}
 
+	public String getEvilCatMessage()
+	{
+		return evilCatMessage;
+	}
 }

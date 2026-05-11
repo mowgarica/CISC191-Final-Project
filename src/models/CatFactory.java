@@ -1,6 +1,6 @@
 /**
 * Lead Author(s):
-* @author daisygarcia; student ID
+* @author daisygarcia; 5550075466
 * @author monix williams-garcia; student ID
 *
 * Other Contributors:
@@ -17,7 +17,10 @@ package models;
 
 import java.util.Random;
 
-import models.EvilCat.Types;
+import models.EvilCat.EvilTypes;
+import models.GoodCat.GoodTypes;
+
+//import models.EvilCat.Types;
 
 /**
  * Purpose: The reponsibility of CatFactory is ...
@@ -39,13 +42,13 @@ public class CatFactory
 		switch(rngCatMorality.nextInt(2))
 		{
 			case 0:
-				GoodCat goodCat = new GoodCat();
+				GoodTypes goodCatType = determineGoodCatType(catTypeNumber);
 				//GoodCat.Types goodCatType = determineGoodCatType(catTypeNumber);
-				return goodCat;
+				return fromGoodCatType(goodCatType);
 				
 			case 1:
 				// 2. get the actual cat type from the number
-				EvilCat.Types evilCatType = determineEvilCatType(catTypeNumber);
+				EvilTypes evilCatType = determineEvilCatType(catTypeNumber);
 				
 				// 3. call from evil cat type with the type
 				return fromEvilCatType(evilCatType);
@@ -53,12 +56,9 @@ public class CatFactory
 				default:
 					return null;
 		}
-		
-		
-		
 	}
 	
-	public static GoodCat fromGoodCatType(GoodCat.Types goodCatType) 
+	public static GoodCat fromGoodCatType(GoodCat.GoodTypes goodCatType) 
 	{
 		switch(goodCatType)
 		{
@@ -74,11 +74,11 @@ public class CatFactory
 				
 				default:
 					return null;
-			
 		}
 	}
 	
-	public static EvilCat fromEvilCatType(EvilCat.Types evilCatType)
+	
+	public static EvilCat fromEvilCatType(EvilCat.EvilTypes evilCatType)
 	{
 		switch(evilCatType)
 		{
@@ -91,22 +91,39 @@ public class CatFactory
 				
 				default:
 					return null;
-			
 		}
 	}
 	
-	public static EvilCat.Types determineEvilCatType(int selection)
+	public static GoodCat.GoodTypes determineGoodCatType(int selection)
 	{
 		switch(selection)
 		{
 			case 1:
-				return Types.IRIS_CAT; 
+				return GoodCat.GoodTypes.SLEEPY_CAT;
 				
-			case 2:
-				return Types.ANGRY_CAT;
+			case 2: 
+				return GoodCat.GoodTypes.PRETTY_CAT;
 				
 			case 3: 
-				return Types.HUNGRY_CAT;
+				return GoodCat.GoodTypes.SHY_CAT;
+				
+			default:
+				return null;
+		}
+	}
+	
+	public static EvilCat.EvilTypes determineEvilCatType(int selection)
+	{
+		switch(selection)
+		{
+			case 0:
+				return EvilCat.EvilTypes.IRIS_CAT; 
+				
+			case 1:
+				return EvilCat.EvilTypes.ANGRY_CAT;
+				
+			case 2: 
+				return EvilCat.EvilTypes.HUNGRY_CAT;
 				
 				default: 
 					return null;
